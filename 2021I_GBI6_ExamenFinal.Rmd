@@ -167,6 +167,17 @@ tcga_boxplots(df_long)
 ### [0.5 PUNTOS] 2.2 Utilizando la función ```lapply()``` genera la lista ```cancertype_boxplots``` con las gráficas para cada tipo de cancer (cada tipo de dataset). 
 ```{r list_boxplots}
 # Escriba el código para generar la lista. 
+cancertype <- list(
+  BRCA <- filter(df_long, dataset == "BRCA"),
+  OV <- filter(df_long, dataset == "OV"),
+  LUSC <- filter(df_long, dataset == "LUSC"),
+  KIPAN <- filter(df_long, dataset == "KIPAN"),
+  KIRP <- filter(df_long, dataset == "KIRP"),
+  UCEC <- filter(df_long, dataset == "UCEC")
+)
+
+cancertype_boxplots = lapply(cancertype, function(x) {ggplot(x, aes(dataset, expresion_level, col = dataset)) +
+    geom_boxplot() + theme(legend.position='none') + labs(x = "", y = "Expression level")})
 
 
 ```
