@@ -138,7 +138,11 @@ descr(cancer_mama) %>% tab_df(title = "Estadistica descriptiva del cancer de MAM
 
 
 ```{tex}
-# Escriba aquí su interpretación (escribir)
+##Escriba aquí su interpretación 
+#Se muestra las variantes del cancer de mama,
+##el tipo al que pertence y con que nombre estan etiquetados.
+##Ademas en valores numericos esta la media respectivamente, 
+##el rango dentro del cual se encuentran 
 
 ```
 
