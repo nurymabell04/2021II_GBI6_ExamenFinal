@@ -138,7 +138,7 @@ descr(cancer_mama) %>% tab_df(title = "Estadistica descriptiva del cancer de MAM
 
 
 ```{tex}
-# Escriba aquí su interpretación 
+# Escriba aquí su interpretación (escribir)
 
 ```
 
@@ -152,6 +152,14 @@ Para esta pregunta tiene que utilizar la data ```df_long```.
 
 ```{r}
 # Escriba el código para crear la función tcga_boxplots
+library(ggplot2)
+
+tcga_boxplots <- function(dataset) {
+  library(ggplot2)
+  return(ggplot (dataset, aes(x = gen, y = expresion_level, col = gen)) + labs(x="Gen", y = "Expression level")
+         + geom_boxplot() + geom_jitter(size=0.10))
+}
+tcga_boxplots(df_long)
 
 
 ```
